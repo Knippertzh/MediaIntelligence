@@ -32,6 +32,7 @@ type RegisterFormValues = z.infer<typeof registerSchema>;
 export default function AuthPage() {
   const [location, navigate] = useLocation();
   const { user, loginMutation, registerMutation, isLoading } = useAuth();
+  const logoPath = "/assets/dci-media-logo.jpg";
   
   // If user is already logged in, redirect to dashboard
   useEffect(() => {
@@ -121,9 +122,9 @@ export default function AuthPage() {
                         name="username"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>Benutzername</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter your username" {...field} />
+                              <Input placeholder="Geben Sie Ihren Benutzernamen ein" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -135,9 +136,9 @@ export default function AuthPage() {
                         name="password"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Password</FormLabel>
+                            <FormLabel>Passwort</FormLabel>
                             <FormControl>
-                              <Input type="password" placeholder="Enter your password" {...field} />
+                              <Input type="password" placeholder="Geben Sie Ihr Passwort ein" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -152,10 +153,10 @@ export default function AuthPage() {
                         {loginMutation.isPending ? (
                           <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Logging in...
+                            Anmeldung...
                           </>
                         ) : (
-                          "Sign In"
+                          "Anmelden"
                         )}
                       </Button>
                     </form>
@@ -167,9 +168,9 @@ export default function AuthPage() {
             <TabsContent value="register">
               <Card>
                 <CardHeader>
-                  <CardTitle>Create an Account</CardTitle>
+                  <CardTitle>Konto erstellen</CardTitle>
                   <CardDescription>
-                    Enter your details to create a new account
+                    Geben Sie Ihre Daten ein, um ein neues Konto zu erstellen
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
