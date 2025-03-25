@@ -89,7 +89,7 @@ export default function AuthPage() {
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <img 
-                src="/src/assets/dci-media-logo.jpg" 
+                src={logoPath} 
                 alt="DCI Media Logo" 
                 className="h-16 w-auto"
               />
@@ -182,9 +182,9 @@ export default function AuthPage() {
                           name="firstName"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>First Name</FormLabel>
+                              <FormLabel>Vorname</FormLabel>
                               <FormControl>
-                                <Input placeholder="John" {...field} />
+                                <Input placeholder="Max" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -196,9 +196,9 @@ export default function AuthPage() {
                           name="lastName"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Last Name</FormLabel>
+                              <FormLabel>Nachname</FormLabel>
                               <FormControl>
-                                <Input placeholder="Doe" {...field} />
+                                <Input placeholder="Mustermann" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -213,7 +213,7 @@ export default function AuthPage() {
                           <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="john.doe@example.com" {...field} />
+                              <Input type="email" placeholder="max.mustermann@beispiel.de" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -225,9 +225,9 @@ export default function AuthPage() {
                         name="username"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Username *</FormLabel>
+                            <FormLabel>Benutzername *</FormLabel>
                             <FormControl>
-                              <Input placeholder="Enter a username" {...field} />
+                              <Input placeholder="Geben Sie einen Benutzernamen ein" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -239,9 +239,9 @@ export default function AuthPage() {
                         name="password"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Password *</FormLabel>
+                            <FormLabel>Passwort *</FormLabel>
                             <FormControl>
-                              <Input type="password" placeholder="Create a password" {...field} />
+                              <Input type="password" placeholder="Erstellen Sie ein Passwort" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -253,9 +253,9 @@ export default function AuthPage() {
                         name="confirmPassword"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Confirm Password *</FormLabel>
+                            <FormLabel>Passwort bestätigen *</FormLabel>
                             <FormControl>
-                              <Input type="password" placeholder="Confirm your password" {...field} />
+                              <Input type="password" placeholder="Bestätigen Sie Ihr Passwort" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -270,10 +270,10 @@ export default function AuthPage() {
                         {registerMutation.isPending ? (
                           <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Creating account...
+                            Konto wird erstellt...
                           </>
                         ) : (
-                          "Create Account"
+                          "Konto erstellen"
                         )}
                       </Button>
                     </form>
@@ -288,16 +288,16 @@ export default function AuthPage() {
       {/* Hero Side */}
       <div className="hidden md:flex md:w-1/2 bg-primary text-white items-center justify-center">
         <div className="max-w-lg p-8">
-          <h2 className="text-3xl font-bold mb-4">Power up your B2B relationships</h2>
+          <h2 className="text-3xl font-bold mb-4">Stärken Sie Ihre B2B-Beziehungen</h2>
           <p className="text-xl mb-6">
-            DCI Media CRM helps you optimize your customer relationships with powerful AI-driven insights.
+            DCI Media CRM hilft Ihnen, Ihre Kundenbeziehungen mit leistungsstarken KI-gestützten Erkenntnissen zu optimieren.
           </p>
           <ul className="space-y-4">
             <li className="flex items-start">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span>AI-powered lead scoring and company research</span>
+              <span>KI-gestützte Lead-Bewertung und Unternehmensrecherche</span>
             </li>
             <li className="flex items-start">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
