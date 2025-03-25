@@ -55,6 +55,9 @@ export function Header({ onMobileMenuToggle }: HeaderProps) {
         
         {/* Right Side Icons */}
         <div className="flex items-center space-x-4">
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+          
           {/* Theme Toggle */}
           <Button 
             variant="ghost" 
