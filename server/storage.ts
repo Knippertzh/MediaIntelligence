@@ -11,12 +11,14 @@ import postgres from "postgres";
 import connectPg from "connect-pg-simple";
 import { eq, and, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/postgres-js";
+import pg from 'pg';
 
 const MemoryStore = createMemoryStore(session);
 
 // Konfiguration für PostgreSQL-Verbindung
 const connectionString = process.env.DATABASE_URL;
 const pgPool = postgres(connectionString!);
+const pgStandardPool = new pg.Pool({ connectionString });
 const PostgresSessionStore = connectPg(session);
 const db = drizzle(postgres(connectionString!));
 
@@ -68,7 +70,7 @@ export interface IStorage {
   getAiInsightsByCompany(companyId: number): Promise<AiInsight[]>;
   
   // Session store
-  sessionStore: session.SessionStore;
+  sessionStore: session.Store;
 }
 
 export class MemStorage implements IStorage {
@@ -77,7 +79,7 @@ export class MemStorage implements IStorage {
   private companies: Map<number, Company>;
   private tasks: Map<number, Task>;
   private aiInsights: Map<number, AiInsight>;
-  sessionStore: session.SessionStore;
+  sessionStore: session.Store;
   
   currentUserId: number;
   currentLeadId: number;
@@ -334,11 +336,11 @@ export class MemStorage implements IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
-  sessionStore: any;
+  sessionStore: session.Store;
 
   constructor() {
     this.sessionStore = new PostgresSessionStore({
-      pool: pgPool,
+      pool: pgStandardPool,
       createTableIfMissing: true
     });
     
