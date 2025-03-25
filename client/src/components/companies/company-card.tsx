@@ -44,7 +44,7 @@ export function CompanyCard({ company, onEdit, onDelete, onResearch }: CompanyCa
   };
 
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
       <div className="relative h-1">
         <div 
           className={`absolute top-0 left-0 h-full ${
@@ -71,7 +71,14 @@ export function CompanyCard({ company, onEdit, onDelete, onResearch }: CompanyCa
               <div className="flex flex-col items-end">
                 <span className="text-sm font-medium">Engagement</span>
                 <div className="flex items-center mt-1">
-                  <div className="w-16 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div className="w-32">
+  <Slider
+    value={[company.engagementScore || 0]}
+    max={100}
+    step={1}
+    className="cursor-default"
+    disabled
+  />
                     <div 
                       className={
                         company.engagementScore >= 70 ? "bg-green-500 dark:bg-green-400" :

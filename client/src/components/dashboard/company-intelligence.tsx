@@ -20,6 +20,26 @@ interface CompanyIntelligenceProps {
 }
 
 export function CompanyIntelligence({ companies, isLoading }: CompanyIntelligenceProps) {
+  if (isLoading) {
+    return (
+      <Card>
+        <CardHeader className="border-b border-gray-200 dark:border-gray-700">
+          <CardTitle>Company Intelligence</CardTitle>
+        </CardHeader>
+        <CardContent className="p-6">
+          <div className="space-y-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="space-y-2">
+                <Skeleton className="h-12 w-full" />
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-4 w-1/2" />
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
   const [searchTerm, setSearchTerm] = useState("");
   const queryClient = useQueryClient();
   
