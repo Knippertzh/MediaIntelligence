@@ -16,7 +16,8 @@ i18n
         translation: deDE
       }
     },
-    fallbackLng: 'en',
+    fallbackLng: 'de',
+    lng: 'de',
     debug: false,
     interpolation: {
       escapeValue: false, // React already safes from XSS

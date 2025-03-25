@@ -88,29 +88,29 @@ export default function AuthPage() {
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <img 
-                src="/images/dci-media-logo.jpg" 
+                src="/src/assets/dci-media-logo.jpg" 
                 alt="DCI Media Logo" 
                 className="h-16 w-auto"
               />
             </div>
             <h1 className="text-2xl font-bold">CRM</h1>
             <p className="text-gray-500 dark:text-gray-400 mt-2">
-              Sign in to access your CRM dashboard
+              Melden Sie sich an, um auf Ihr CRM-Dashboard zuzugreifen
             </p>
           </div>
           
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="login">Login</TabsTrigger>
-              <TabsTrigger value="register">Register</TabsTrigger>
+              <TabsTrigger value="login">Anmelden</TabsTrigger>
+              <TabsTrigger value="register">Registrieren</TabsTrigger>
             </TabsList>
             
             <TabsContent value="login">
               <Card>
                 <CardHeader>
-                  <CardTitle>Login</CardTitle>
+                  <CardTitle>Anmelden</CardTitle>
                   <CardDescription>
-                    Enter your credentials to access your account
+                    Geben Sie Ihre Anmeldedaten ein, um auf Ihr Konto zuzugreifen
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
