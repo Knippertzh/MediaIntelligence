@@ -87,22 +87,13 @@ export default function AuthPage() {
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <svg 
-                viewBox="0 0 50 24" 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-10 w-auto"
-              >
-                <path 
-                  d="M6.58 19.67l-1.69 3.83h-4.9L10.97 0h4.43l10.97 23.5h-4.9L19.8 19.67H6.58zm10.1-4.92c-1.05-2.39-2.1-4.78-3.16-7.85-.79 2.39-1.83 4.78-2.89 7.17h6.06l-.01.68z" 
-                  fill="#2563EB"
-                />
-                <path 
-                  d="M39.7 8.27V0h-4.89v23.5h4.9v-9.07c0-3.26 1.78-5.66 4.93-5.66.26 0 .53.14.79.14l.78-4.78c-.52-.14-1.04-.14-1.57-.14-2.62 0-4.4 1.78-4.93 4.28z" 
-                  fill="#64748B"
-                />
-              </svg>
+              <img 
+                src="/images/dci-media-logo.jpg" 
+                alt="DCI Media Logo" 
+                className="h-16 w-auto"
+              />
             </div>
-            <h1 className="text-2xl font-bold">DCI Media CRM</h1>
+            <h1 className="text-2xl font-bold">CRM</h1>
             <p className="text-gray-500 dark:text-gray-400 mt-2">
               Sign in to access your CRM dashboard
             </p>
